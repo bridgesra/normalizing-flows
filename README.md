@@ -47,18 +47,6 @@ The setup follows reference: https://www.freecodecamp.org/news/manage-multiple-p
 
     Note that the `.venv` folder is gitignored and should not ship with the repo. 
 
-### git lfs and gitignore
-- git lfs is pip installed in this virtual envrionment. This is a lightweight version that should be ok for our use. 
-- a .gitattributes exists to demarkate files that should be lfs-tracked.  
-- repo instantiated with .gitattributes established for git-lfs tracking csv and json files and more can be added to the .gitattributes file, e.g., `git lfs track "*.csv"`
-- see https://git-lfs.github.com/ for use 
-
-- .gitignore initiated for annoying files that need not be tracked. 
-- for *very* large files/data folders, gitignore should be used, not .gitattributes/git-lfs
-
-
-
-
 
 ## From VishakhG's Readme:
 Attempting to implement the potential function experiments from:
