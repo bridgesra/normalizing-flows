@@ -63,8 +63,7 @@ def pot_5(z):
     X = torch.tensor([[-1.,1.], [1.,1.]])
     y = torch.tensor([0.,1.])
 
-    y_preds = torch.sigmoid(torch.mm(X,z.T)) # shape is (2 by l): \phi(x^t b)  for each of the 2 data points x\in X, and for each of the l weight vectors b\in B, 
-
+    y_preds = torch.sigmoid(torch.mm(X,z.T)) 
     # compute cross entropy loss for every beta given: 
     cel_fn = torch.nn.BCELoss(reduction = 'sum' ) ## instantiates binary cross entropy loss function class, see # https://pytorch.org/docs/stable/generated/torch.nn.BCELoss.html
     cels = torch.tensor([cel_fn(y_preds[:, j], y ) for j in range(y_preds.shape[1])]) # shape is l
@@ -74,27 +73,11 @@ def pot_5(z):
     norm2 = z_1.pow(2) + z_2.pow(2)
     return -cels - .1* norm2
 
-# def pot_6(z): # same as pot_5, but with hand written cel
-#     X = torch.tensor([[-1.,1.], [1.,1.]])
-#     y = torch.tensor([0.,1.])
-
-#     y_preds = torch.sigmoid(torch.mm(X,z.T)) # shape is (2 by l): \phi(x^t b)  for each of the 2 data points x\in X, and for each of the l weight vectors b\in B, 
-#     neg_cels = torch.tensor( [ (y*torch.log(y_preds[:,j]) + (1-y)*torch.log(1-y_preds[:,j])).sum() for j in range(y_preds.shape[1]) ])
-    
-#     # compute l2 norm^2 of input
-#     z_1, z_2 = z[:, 0], z[:, 1]
-#     norm2 = z_1.pow(2) + z_2.pow(2)
-    
-#     return neg_cels -.1 * norm2
-
-
-
 def pot_6(z): # slight variant of pot_5, makes it oblong
     X = torch.tensor([[2.,1.], [6.,1.]])
     y = torch.tensor([0.,1.])
 
-    y_preds = torch.sigmoid(torch.mm(X,z.T)) # shape is (2 by l): \phi(x^t b)  for each of the 2 data points x\in X, and for each of the l weight vectors b\in B, 
-
+    y_preds = torch.sigmoid(torch.mm(X,z.T)) 
     # compute cross entropy loss for every beta given: 
     cel_fn = torch.nn.BCELoss(reduction = 'sum' ) ## instantiates binary cross entropy loss function class, see # https://pytorch.org/docs/stable/generated/torch.nn.BCELoss.html
     cels = torch.tensor([cel_fn(y_preds[:, j], y ) for j in range(y_preds.shape[1])]) # shape is l
