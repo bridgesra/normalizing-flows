@@ -11,8 +11,8 @@ def random_normal_samples(n, dim=2):
 def plot_pot_func(pot_func, ax=None):
     if ax is None:
         _, ax = plt.subplots(1)
-    x = np.linspace(-4, 4, 1e2)
-    y = np.linspace(-4, 4, 1e2)
+    x = np.linspace(-4, 4, 100)
+    y = np.linspace(-4, 4, 100)
     xx, yy = np.meshgrid(x, y)
     in_tens = torch.Tensor(np.vstack([xx.ravel(), yy.ravel()]).T)
     z = (torch.exp(pot_func(in_tens))).numpy().reshape(xx.shape)

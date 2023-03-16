@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: functorch
+Version: 1.13.1
+Summary: JAX-like composable function transforms for PyTorch
+Home-page: https://github.com/pytorch/functorch
+Author: PyTorch Core Team
+License: BSD
+Platform: UNKNOWN
+License-File: LICENSE
+Requires-Dist: torch (<1.13.2,>=1.13.1)
+Provides-Extra: aot
+Requires-Dist: networkx ; extra == 'aot'
+
+UNKNOWN
+
