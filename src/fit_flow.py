@@ -133,11 +133,8 @@ samples = ((model.sample(
         args.N_PLOT_SAMPLES))).detach().numpy())
 
 cmap = plt.get_cmap('inferno')
-
-
 plt.xlim(-4, 4)
 plt.ylim(-4, 4)
-
 sns.jointplot(samples[:, 0], samples[:, 1], kind='kde', cmap=cmap)
 plt.savefig(pjoin(OUT_DIR, 'samples_kde.png'))
 plt.close()

@@ -1,3 +1,5 @@
+.venv/
+.venv*
 out/
 notes/
 .ipynb_checkpoints/
